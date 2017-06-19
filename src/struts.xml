@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<!-- 用户模块package -->
+    <package name="userdefault" namespace="/" extends="struts-default">
+    	<!-- 创建UserAction对象 调用execute方法 负责登录验证问题 -->
+		<action name="loginAction" class="userAction">
+			<result name="SUCCESS">index.jsp</result>
+			<result name="ERROR">/front/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 创建UserAction对象  调用regist方法  负责注册，调用regist方法 -->
+		<action name="registAction" class="userAction" method="regist">
+			<result name="SUCCESS">/front/jsp/registSuccess.jsp</result>
+			<result name="ERROR">/front/jsp/regist.jsp</result>
+		</action>
+		
+		<!-- 创建UserAction对象 验证用户名、邮箱、手机号是否已被使用，结合前端Ajax使用 -->
+		<action name="*Action" class="userAction" method="{1}"></action>
+    </package>
+
+	<!-- 商品模块package -->
+	<package name="gooddefault" extends="struts-default" namespace="/">
+		<!-- 创建GoodAction对象 调用execute方法全查询所有商品 -->
+		<action name="goodAction" class="goodAction">
+			<result name="SUCCESS">/front/jsp/main.jsp</result>
+		</action>
+		
+		<!-- 创建GoodAction对象 调用recommend方法条件查询所有商品得出九条记录 -->
+		<action name="homePageRecommendAction" class="goodAction" method="homePageRecommend">
+			<result name="SUCCESS">/front/jsp/main.jsp</result>
+		</action>
+		
+		<!-- 创建GoodAction对象 调用goodDetail方法根据id查询指定商品 -->
+		<action name="goodDetailAction" class="goodAction" method="goodDetail">
+			<result name="SUCCESS">/front/jsp/goodDetail.jsp</result>
+		</action>
+		
+		<!-- 该action用于搜索功能 -->
+		<action name="searchAction" class="goodAction" method="search">
+			<result name="SUCCESS">/front/jsp/find.jsp</result>
+		</action>
+		
+		<!-- 该action用于根据分类搜索对应类别的产品 -->
+		<action name="searchByClassAction" class="goodAction" method="searchByClass">
+			<result name="SUCCESS">/front/jsp/find.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 订单模块package -->
+	<package name="orderdefault" extends="struts-default" namespace="/">
+	
+		<!-- 1.声明自定义拦截器 -->
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.krishnna.interceptor.loginInterceptor"></interceptor>
+		</interceptors>
+		
+		<!-- 创建commitOrderAction对象 调用CommitOrder方法提交订单 -->
+		<action name="commitOrderAction" class="OrderAction" method="CommitOrder">
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="SUCCESS" type="redirectAction">findOrderAction</result>
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+			<result name="ORDER" type="redirectAction">findOrderAction</result>
+		</action>
+		
+		<!-- 创建findOrderAction对象 调用CommitOrder方法全查询所有订单 -->
+		<action name="findOrderAction" class="OrderAction" method="findOrder">
+		
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="SUCCESS">/front/jsp/order.jsp</result>
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 创建payOneAction、payAllAction对象 调用payOne/payAll方法跳转到第三方平台 -->
+		<action name="payAction" class="OrderAction" method="pay">
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 创建payOneAction、payAllAction对象 调用payOne/payAll方法全查询单个/所有订单-->
+		<action name="chooseWayForPayAction" class="OrderAction" method="chooseWayForPay">
+			
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="SUCCESS">/front/jsp/payWay.jsp</result>
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 创建confirmPayBackAction对象 调用confirmPayBack方法接受第三方支付平台的支付回调 -->
+		<action name="confirmPayBackAction" class="OrderAction" method="confirmPayBack">
+			
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="SUCCESS">/front/jsp/paySuccess.jsp</result>
+			<result name="FAILED">/front/jsp/payFail.jsp</result>
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+		</action>
+		
+		<!-- 创建updateOrderStateAction对象 调用updateOrderState方法修改订单状态-->
+		<action name="updateOrderStateAction" class="OrderAction" method="updateOrderState">
+			
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="GIVESCORE">/front/jsp/giveScore.jsp</result>
+			<result name="DELIVERY">/front/jsp/giveScore.jsp</result>
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+		</action>
+		
+	</package>
+	
+	<!-- 购物车模块package -->
+	<package name="cartdefault" extends="struts-default" namespace="/">
+		
+		<!-- 1.声明自定义拦截器 -->
+		<interceptors>
+			<interceptor name="loginInterceptor" class="com.krishnna.interceptor.loginInterceptor"></interceptor>
+		</interceptors>
+		
+		<action name="*Action" class="CartAction" method="{1}">
+			<!-- 2. 使用自定义拦截器 -->
+			<interceptor-ref name="loginInterceptor"></interceptor-ref>
+			
+			<!-- 3. 添加默认拦截器 -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<result name="SUCCESS">/front/jsp/cart.jsp</result>
+			<result name="LOGIN">/front/jsp/login.jsp</result>
+		</action>
+	</package>
+
+</struts>
+
+	

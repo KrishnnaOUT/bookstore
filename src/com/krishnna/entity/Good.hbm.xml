@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.krishnna.entity.Good" table="good" >
+        <id name="gid" type="java.lang.String">
+            <column name="gid" />
+            <generator class="assigned" />
+        </id>
+        <property name="gname" type="java.lang.String">
+            <column name="gname" />
+        </property>
+        <property name="storeName" type="java.lang.String">
+            <column name="storeName" />
+        </property>
+        <property name="price" type="java.lang.Float">
+            <column name="price" />
+        </property>
+        <property name="briefing" type="java.lang.String">
+            <column name="briefing" />
+        </property>
+        <property name="salesNum" type="int">
+            <column name="salesNum" />
+        </property>
+        <property name="picture" type="java.lang.String">
+            <column name="picture" />
+        </property>
+        <property name="bookBigClass" type="java.lang.String">
+            <column name="bookBigClass" />
+        </property>
+        <property name="bookSmallClass" type="java.lang.String">
+            <column name="bookSmallClass" />
+        </property>
+        <property name="bookDate" type="timestamp">
+            <column name="bookDate" />
+        </property>
+        
+        <many-to-one name="store" class="com.krishnna.entity.Store">
+        	<column name="sgid"></column>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

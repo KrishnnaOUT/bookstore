@@ -1,0 +1,34 @@
+#copyright{
+	width: 100%;
+	height: 150px;
+	background-color:#494949;
+	clear: left;
+	margin: 0px auto;
+	margin-top:550px;
+}
+
+#copyright_left{
+	margin-left:15%;
+	padding:30px;
+	padding-left:80px;
+	width:20%;
+	height:60%;
+	float:left;
+}
+
+#copyright_center{
+	width:20%;
+	height:60%;
+	padding:30px;
+	float:left;
+}
+.shop_info{
+	font-size:18px;
+	color:#000;
+}
+#copyright_right{
+	width:20%;
+	height:60%;
+	padding:30px;
+	float:left;
+}

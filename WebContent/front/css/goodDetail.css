@@ -1,0 +1,225 @@
+#all{
+	width:100%;
+	/*position:relative;
+	z-index:-2;*/
+	/*top: 0;  
+	right: 0;  
+	left: 0; 
+	background: linear-gradient( #DFFFFF, #B7FFFF);/**/
+}
+
+#main{
+	width:100%;
+}
+
+.good_detail {
+	width: 80%;
+	height: 500px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	border: thin solid #A3A3A3;
+}
+.good_detail_left {
+	float: left;
+	width: 400px;
+}
+
+.good_detail_center {
+	float: left;
+	width: 470px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	border-right-width: thin;
+	border-right-style: solid;
+	border-right-color:#C0C0C0;
+}
+
+.picture_div{
+	width: 300px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	;
+	margin-left: auto;
+	margin-right: auto;
+}
+.picture{
+	width:330px;	
+}
+
+
+.good_detail_right{
+	width: 150px;
+	float: left;
+	margin-top:20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top-width: thick;
+	border-right-width: thick;
+	border-bottom-width: thick;
+	border-left-width: thick;
+	border-top-style: groove;
+	border-top-color: #F30;
+	border-right-color: #F30;
+	border-bottom-color: #F30;
+	border-left-color: #F30;
+	top: 0;
+	right: 0;
+	left: 0;
+	background: linear-gradient( #FFC891, #FFF);
+	font-weight: 900;
+}
+
+.good_div{
+	float: left;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+
+.good_title{
+	height: 100px;
+}
+
+.gname{
+	font-size: 24px;
+	font-weight: 500;
+	color: #000;
+}
+
+.good_briefing{
+	padding-left: 20px;
+	padding-top: 10px;
+	
+}
+
+.price_all{
+	height: 40px;
+	background-color: #FCC;
+	float: left;
+}
+
+.text_info{
+	width: 80px;
+	float: left;
+	height: 30px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.price_div{
+	width: 250px;
+	height: 35px;
+	padding-top: 5px;
+	float: left;
+	text-indent: 1em;
+}
+.price{
+	font-size: 20px;
+	font-weight: 900;
+	color: #F00;
+}
+
+.good_sale_info{
+	float: left;
+	width: 100px;
+	height: 35px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.salesNum{
+	font-size: 16px;
+	font-weight: 900;
+	
+}
+
+.address_div{
+	float: left;
+	width: 370px;
+	text-indent: 1em;
+	margin-top: 10px;
+	
+}
+.address_info {
+	border: thin dashed #CCC;
+	background-color: #EBEBEB;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.specifications_div{
+	width: 350px;
+	float: left;
+	padding-left: 10px;
+	padding-top: 20px;
+	
+}
+.specifications {
+	border: thin dashed #C2C2C2;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color: #999999;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	color: #000;
+}
+.count_div {
+	float: left;
+	width: 150px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+.adjust_count {
+	font-size: 18px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-color: #CCC;
+	padding-top: 2px;
+}
+.count {
+	width: 40px;
+	height: 22px;
+	text-align: center;
+}
+.inventory_div {
+	float: left;
+	width: 150px;
+	padding-top: 10px;
+}
+
+.button_div {
+	float: left;
+	width: 450px;
+}
+.operation_div {
+	width: 180px;
+	float: left;
+}
+
+.operation {
+	font-size: 20px;
+	color: #FFF;
+	width: 150px;
+	font-weight: 800;
+	padding-top: 5px;
+	padding-right: 20px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	border: thin groove #FA1010;
+	background-color: #F00;
+	margin-top: 20px;
+	margin-right: 10px;
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+.store_all {
+	margin-top: 40px;
+	margin-left: 10px;
+}
+

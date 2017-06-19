@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 2. 开启事物注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- 创建UserAction对象 负责登录验证问题 -->
+	<bean id="userAction" class="com.krishnna.action.user.UserAction"  scope="prototype" >
+		<!-- 注入UserService对象 -->
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- 创建UserService对象 -->
+	<bean id="userService" class="com.krishnna.service.user.UserService">
+		<!-- 注入UserDao实现类对象 -->
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<!-- 创建UserDao实现类对象 -->
+	<bean id="userDao" class="com.krishnna.dao.user.UserDaoImpl">
+		<!-- 注入hibernateTemplate对象 -->
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 创建HibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<!-- 注入sessionFactory对象 -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+</beans>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.krishnna.entity.myOrder" table="orders" >
+        <id name="oid" type="java.lang.String">
+            <column name="oid" />
+            <generator class="assigned" />
+        </id>
+        <property name="ordertime" type="timestamp">
+            <column name="ordertime" />
+        </property>
+        <property name="total" type="double">
+            <column name="total" />
+        </property>
+        <property name="state" type="int">
+            <column name="state" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="address" />
+        </property>
+        
+        <many-to-one name="owner" class="com.krishnna.entity.User">
+        	<column name="uoid"></column>
+        </many-to-one>
+	
+		<set name="orderItemList" cascade="save-update" lazy="false">
+			<!-- 因为hibernate是双向维护的，
+			所以在一多两方都要配置这个外键，切名字一定要相同 -->
+			<!-- 设置外键 -->
+			<key column="oiid"></key>
+			<!-- 设置一对多 -->
+			<one-to-many class="com.krishnna.entity.OrderItem"></one-to-many>
+		</set>
+    </class>
+</hibernate-mapping>

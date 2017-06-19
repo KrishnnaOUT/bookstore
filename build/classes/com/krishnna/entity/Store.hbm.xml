@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.krishnna.entity.Store" table="store" >
+        <id name="sid" type="java.lang.String">
+            <column name="sid" />
+            <generator class="assigned" />
+        </id>
+        <property name="storeName" type="java.lang.String">
+            <column name="storeName" />
+        </property>
+        <property name="storeLogo" type="java.lang.String">
+            <column name="storeLogo" />
+        </property>
+        <property name="shopClass" type="int">
+            <column name="shopClass" />
+        </property>
+        <property name="registDate" type="timestamp">
+            <column name="registDate" />
+        </property>
+        
+        <set name="storeOrderSet" cascade="save-update">
+			<!-- 因为hibernate是双向维护的，
+			所以在一多两方都要配置这个外键，切名字一定要相同 -->
+			<!-- 设置外键 -->
+			<key column="soid"></key>
+			<!-- 设置一对多 -->
+			<one-to-many class="com.krishnna.entity.myOrder"></one-to-many>
+		</set>
+		
+		<set name="goodSet" cascade="save-update">
+			<!-- 因为hibernate是双向维护的，
+			所以在一多两方都要配置这个外键，切名字一定要相同 -->
+			<!-- 设置外键 -->
+			<key column="sgid"></key>
+			<!-- 设置一对多 -->
+			<one-to-many class="com.krishnna.entity.Good"></one-to-many>
+		</set>
+		
+		<many-to-one name="user" unique="true" cascade="all" lazy="false">
+			<column name="usid"></column>
+		</many-to-one>
+		
+    </class>
+</hibernate-mapping>

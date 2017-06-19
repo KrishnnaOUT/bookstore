@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:component-scan base-package="com.krishnna"></context:component-scan>
+	
+	<bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+		<property name="jdbcUrl" value="jdbc:mysql:///bookstore"></property>
+		<property name="user" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	
+	<!-- 创建sessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 指定数据库信息 -->
+		<property name="dataSource" ref="dataSource"></property>
+		
+		<!-- 配置hibernate基本信息 -->
+		<property name="hibernateProperties" >
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+			</props>
+		</property>
+		
+		<!-- 配置映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/krishnna/entity/User.hbm.xml</value>
+				<value>com/krishnna/entity/Address.hbm.xml</value>
+				<value>com/krishnna/entity/Store.hbm.xml</value>
+				<value>com/krishnna/entity/Good.hbm.xml</value>
+				<value>com/krishnna/entity/myOrder.hbm.xml</value>
+				<value>com/krishnna/entity/OrderItem.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!--1.  配置事务管理 器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
+		<!-- 注入sessionFactory对象 -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 引入userAction配置文件 -->
+	<import resource="classpath:userAction.xml"/>
+	<!-- 引入goodAction配置文件 -->
+	<import resource="classpath:goodAction.xml"/>
+	<!-- 引入OrderAction配置文件 -->
+	<import resource="classpath:OrderAction.xml"/>
+	<!-- 引入CartAction配置文件 -->
+	<import resource="classpath:CartAction.xml"/>
+	
+</beans>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.krishnna.entity.OrderItem" table="orderitem" >
+        <id name="iid" type="java.lang.String">
+            <column name="iid" />
+            <generator class="assigned" />
+        </id>
+        <property name="count" type="int">
+            <column name="count" />
+        </property>
+        <property name="subtotal" type="double">
+            <column name="subtotal" />
+        </property>
+        
+        <!-- 设置orderItem与order的多对一关系 -->
+        <many-to-one name="order" class="com.krishnna.entity.myOrder">
+        	<column name="oiid"></column>
+        </many-to-one>
+        
+        <!-- 设置orderItem与good的多对一关系 -->
+        <many-to-one name="good" class="com.krishnna.entity.Good" lazy="false">
+        	<column name="giid"></column>
+        </many-to-one>
+        
+    </class>
+</hibernate-mapping>

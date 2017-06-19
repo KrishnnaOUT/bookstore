@@ -1,0 +1,143 @@
+#all{
+	width:100%;
+	/*position:relative;
+	z-index:-2;*/
+	top: 0;  
+	right: 0;  
+	left: 0; 
+	background: linear-gradient( #DFFFFF, #B7FFFF);
+}
+
+#main{
+	width:100%;
+}
+
+
+
+#centerPart{
+	width:80%;
+	position:relative;
+	margin:0px auto;
+}
+
+#centerPart_left_bar{
+	width: 20%;
+	height: 425px;
+	background-color: #464646;
+}
+
+.classText{
+	width:80%;
+	height:60px;
+	padding-top:20px;
+	margin:auto;
+	margin-top:20px;	
+}
+
+.bigclass{
+	font-size: 18px;	
+}
+
+.bar_text_span{
+	color:#FFF;	
+}
+
+.detailclass{
+	margin-top:5px;
+	margin-left:10px;
+}
+
+.bar_text{
+	color: #FFF;
+	font-weight: 200;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+#centerPart_panels{
+	position:absolute;
+	top:0px;
+	left:20%;
+	width:80%;
+	height: 425px;
+	background-color:red;
+}
+
+.panels_img{
+	width:100%;
+	height:425px;
+}
+
+.recommend{
+	padding-top: 20px;
+	clear:left;
+}
+
+.recommend_bar{
+	border-bottom-width: thick;
+	border-bottom-style: ridge;
+	border-bottom-color: #F36;
+		
+}
+
+.recommend_img{
+	width:180px;
+}
+
+.recommend_content{
+	margin:10px 40px;
+	background-color:#FFF;
+}
+
+.main_recommend{
+	width: 250px;
+	height:430px;
+	padding-top: 25px;
+	padding-left: 25px;
+	padding-right: 25px;
+	padding-bottom: 10px;
+	border: thick ridge #FF6;
+	
+	float:left;
+}
+
+.main_recommend_img{
+	width:250px;
+}
+
+.main_recommend_info{
+	margin-top:10px;
+	padding-bottom:5px;	
+}
+
+.incident_recommend{
+	float:left;	
+}
+
+.incident_recommend_one{
+	width: 110px;
+	height:200px;
+	padding: 10px;
+	margin-left: 30px;
+	margin-top: 4px;
+	border: thick ridge #FF6;
+	float: left;
+}
+
+.incident_recommend_one_img{
+	width:110px;	
+}
+
+.author{
+	font-size:12px;	
+}
+
+.price{
+	font-size: 16px;
+	font-weight: 900;
+	color: #F00;
+		
+}
+
+.main_price{
+	font-size: 26px;	
+}

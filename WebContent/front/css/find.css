@@ -1,0 +1,334 @@
+@charset "utf-8";
+/* CSS Document */
+#all{
+	width:100%;
+	/*position:relative;
+	z-index:-2;*/
+	/*top: 0;  
+	right: 0;  
+	left: 0; 
+	background: linear-gradient( #DFFFFF, #B7FFFF);*/
+}
+
+#status{
+	width:100%;
+	height:30px;
+	background-color:#DFDFDF;
+}
+
+#status_text{
+	width:180px;
+	padding:5px;
+	margin-right:20px;
+	float:right;
+}
+
+#personDiv{
+	width: 200px;
+	height: 200px;
+	background-color:#E2E2E2;
+	position: absolute;
+	z-index: 10;
+	right: 0px;
+	display: none;
+	border-bottom-width: medium;
+	border-bottom-style: double;
+	border-bottom-color: #3F3F3F;
+}
+
+.touxiangDiv{
+	height:80px;
+	margin-left:20px;
+	margin-top:20px;
+	float:left;	
+}
+
+.usernameDiv{
+	height:60px;
+	margin-left:10px;
+	margin-top:20px;
+	padding-top:20px;
+	float:left;
+}
+
+.buttonDiv{
+	height:60px;
+	margin-left:20px;
+	margin-top:5px;
+	float:left;	
+}
+
+
+.touxiang{
+	width:80px;
+	border-radius: 80%;
+}
+
+#main{
+	width:100%;
+}
+
+#head{
+	width:80%;
+	margin:20px auto;	
+}
+
+#logo{
+	width:250px;
+	margin-right:50px;
+	float:left;
+	}
+
+#search{
+	width: 600px;
+	height: 60px;
+	padding-left:50px;
+	padding-top:60px;
+	float:left;
+}
+
+#searchBox {
+	width: 400px;
+	height: 30px;
+	border: thin solid #F00;
+	background-color: #FFC;
+}
+
+#searchButton {
+	color: #FFF;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	width: 70px;
+	height: 30px;
+	border: thin solid #F00;
+	font-weight: 800;
+	font-size: 14px;
+	letter-spacing: 10px;
+	text-indent: 1ex;
+	background-color: #F00;
+}
+
+#bar{
+	width: 100%;
+	height: 30px;
+	clear: left;
+	border-top-width: medium;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	border-bottom-style: solid;
+	border-top-color: #F00;
+	border-right-color: #F00;
+	border-bottom-color: #F00;
+	border-left-color: #F00;
+}
+
+
+li{
+	display: inline;
+	color: #000;
+	text-align: center;
+	padding-right: 25px;
+}
+
+.bigClass{
+	font-size: 20px;
+	font-weight: 900;
+	padding-top: 5px;
+	padding-right: 15px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	margin-right: 40px;
+}
+
+#firstLi{
+	margin-left: 10%;
+	background-color: #F00;
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+#centerPart{
+	width:80%;
+	position:relative;
+	margin:0px auto;
+}
+
+#centerPart_left_bar{
+	width: 20%;
+	height: 425px;
+	background-color: #464646;
+}
+
+.classText{
+	width:80%;
+	height:60px;
+	padding-top:20px;
+	margin:auto;
+	margin-top:20px;	
+}
+
+.bigclass{
+	font-size: 18px;	
+}
+
+.bar_text_span{
+	color:#FFF;	
+}
+
+.detailclass{
+	margin-top:5px;
+	margin-left:10px;
+}
+
+.bar_text{
+	color: #FFF;
+	font-weight: 200;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.factorsSelect_bar {
+	width: 80%;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	border-top-width: medium;
+	border-top-style: groove;
+	border-top-color: #CCC;
+	border-bottom-width: medium;
+	border-bottom-style: groove;
+	border-bottom-color: #CCC;
+}
+
+.isSelectFactorList{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+.factor_info{
+	color: #999;
+}
+
+.book_class{
+	border-top-width: thin;
+	border-top-style: solid;
+	border-top-color: #CCC;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #CCC;
+}
+
+#isSelectedFactor_class{
+	background-color: yellow;
+}
+
+#isSelectedFactor_price{
+	background-color: yellow;
+}
+
+.bar_child {
+	background-color: #F2F2F2;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.class_child4{
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #E7E7E7;	
+}
+
+.price_child{
+	
+	margin-top:10px;
+}
+
+.class_info{
+	
+	padding-left:25px;
+}
+
+.main_goodShow {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+}
+.goodShow_head {
+	width:100%;
+	margin-top:20px;
+	float: left;
+}
+
+.goodShow_head_order {
+	width: 350px;
+	float: left;
+}
+
+.curr{
+	background-color: #CCC;
+	text-align: center;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-left: 5px;
+	border: thin solid #999;
+}
+.goodShow_head_page {
+	float: right;
+}
+
+.overPage_button {
+	padding-right: 10px;
+	padding-left: 10px;
+	border: thin solid #E8E8E8;
+	background-color: #E2E2E2;
+}
+.good_list {
+	width:100%;
+	margin-top: 30px;
+	padding-bottom: 30px;
+	float: left;
+	border-bottom-width: medium;
+	border-bottom-style: groove;
+	border-bottom-color: #999;
+}
+
+
+.incident_recommend{
+	float:left;	
+}
+
+.incident_recommend_one{
+	width: 110px;
+	height: 200px;
+	padding: 10px;
+	float: left;
+	margin-bottom: 45px;
+	margin-right: 49px;
+}
+
+.incident_recommend_one_img_div {
+	height: 200px;
+	width: 130px;
+}
+
+.incident_recommend_one_img{
+	width: 130px;
+}
+
+.author{
+	font-size:12px;	
+}
+
+.price{
+	font-size: 16px;
+	font-weight: 900;
+	color: #F00;
+		
+}
+
+.main_price{
+	font-size: 26px;	
+}

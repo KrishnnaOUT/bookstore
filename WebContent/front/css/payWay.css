@@ -1,0 +1,226 @@
+a{
+	text-decoration:none;
+}
+
+#head{
+	height: 35px;
+	background-color: #DADADA;
+	padding: 0px;
+	margin: 0px;
+	border-top-width: thin;
+	border-right-width:thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-top-style: groove;
+	border-right-style: none;
+	border-bottom-style: double;
+	border-left-style: none;
+	border-top-color: #DADADA;
+	border-right-color: #99C;
+	border-bottom-color: #BFBFBF;
+	border-left-color: #99C;
+}
+
+#userInfo {
+	font-family: Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	background-color: #D6D6D6;
+	float: right;
+	padding-top: 8px;
+	padding-right: 30px;
+	padding-left: 0px;
+}
+
+.selectButton{	
+	font-size: 18px;
+
+	text-transform: none;
+	font-variant: normal;
+	font-weight: normal;
+	font:bold;
+	color:#FFF;
+	background-color:#F00;
+	text-align: center;
+	text-indent: 2mm;
+	padding: 9px;
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+	float:right;
+
+}
+
+.price{
+	color:red;
+}
+
+#total{
+	font-size: 28px;
+	color: #F00;
+	font-weight: bolder;
+}
+
+.bar,#detail{
+	width: 920px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+}
+
+thead{
+	background-color:#999;
+}
+
+.title{
+	border-top-width: thin;
+	border-right-width: medium;
+	border-bottom-width: medium;
+	border-left-width: medium;
+	border-top-style: double;
+	border-right-style: none;
+	border-bottom-style: ridge;
+	border-left-style: none;
+	border-top-color: #666;
+	border-right-color: #666;
+	border-bottom-color: #666;
+	border-left-color: #666;
+}
+
+th{
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: medium;
+	border-left-width: thin;
+	border-top-style: none;
+	border-right-style: groove;
+	border-bottom-style: groove;
+	border-left-style: groove;
+	border-top-color: #999;
+	border-right-color: #999;
+	border-bottom-color: #999;
+	border-left-color: #999;
+	
+}
+
+.goodPicture{
+	width:100px;
+}
+
+#good{
+	width: 720px;
+	border: thick groove #3CF;
+	padding: 30px;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+	background-color: #CFF;
+}
+
+.goodPicture{
+	width:40px;
+}
+
+span{
+	margin-left:20px;	
+}
+.goodName {
+	font-size: 16px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	vertical-align: top;
+}
+
+.price{
+	font-size: 24px;
+	font-family: Verdana, Geneva, sans-serif;
+	vertical-align: top;
+	float: right;
+	margin-right: 50px;
+}
+
+.subprice{
+	font-size: 16px;
+	font-family: Verdana, Geneva, sans-serif;
+	vertical-align: top;
+	float: right;
+	margin-right: 50px;
+	color:red;
+}
+
+#payWay{
+	width:720px;
+	margin:20px auto; 
+}
+
+.payWay{
+	color: #999;
+	border-top-width: thick;
+	border-right-width: thick;
+	border-bottom-width: thick;
+	border-left-width: thick;
+	border-top-style: dotted;
+	border-top-color: #CCC;
+	border-right-color: #CCC;
+	border-bottom-color: #CCC;
+	border-left-color: #CCC;
+}
+
+.selectButton{	
+	font-size: 18px;
+
+	text-transform: none;
+	font-variant: normal;
+	font-weight: normal;
+	font:bold;
+	color:#FFF;
+	background-color:#F00;
+	text-align: center;
+	text-indent: 2mm;
+	padding: 9px;
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+	float:right;
+}
+
+.remind{
+	margin-left:70px;
+	color: #999;
+}
+
+#importInfo{
+	border: thick groove #ff0080;
+	padding: 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right:80px;
+	float:right;
+	
+}
+
+
+
+#payButton{
+	margin-right:80px;
+	clear:right;
+}
+
+.ar{
+	color: #999;
+}
+
+.paySuccess{
+	color:red;
+	font:bold;
+	font-size:34px;
+}
+
+.backOrder{
+	font:bold;
+	font-size:34px;
+}

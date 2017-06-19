@@ -1,0 +1,179 @@
+span,a{
+	font-size:14px;	
+	text-decoration:none;
+}
+
+.price{
+	font-weight: 900;
+	color:red;
+}
+
+.bar,#main{
+	width: 80%;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-bottom: 20px;
+	margin-left: auto;
+}
+.text_goodInfo_div {
+	background-color: #EEE;
+	width: 14%;
+	float: left;
+	height: 30px;
+	margin-bottom:10px;
+	text-indent: 2em;
+	border-top-width: thin;
+	border-bottom-width: thin;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #E8E8E8;
+	border-bottom-color: #999;
+}
+.text_goodInfo {
+	margin-top: 5px;
+}
+
+.goodInfo {
+	width: 44%;
+}
+
+.text_orderInfo_div{
+	background-color:#AAA;
+	width: 17%;
+	float: left;
+	height: 30px;
+	margin-top:20px;
+	margin-bottom:2px;
+	text-indent: 2em;
+	border-top-width: thin;
+	border-bottom-width: thin;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #E8E8E8;
+	border-bottom-color: #999;
+}
+
+.text_orderInfo {
+	margin-top: 5px;
+}
+
+.text_orderId {
+	width: 38%;
+}
+
+.text_ordertime{
+	width: 28%;
+}
+
+.store_logo{
+	width:20px;
+	float:left;	
+}
+.text_storeName_div {
+	margin-top: 18px;
+	float: left;
+	width: 100%;
+	margin-bottom: 2px;
+	text-indent: 1em;
+}
+.good_detail {
+	float: left;
+	width: 100%;
+	height:100px;
+	padding-top:20px;
+	border-top-width: medium;
+	border-bottom-width: medium;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #AAA;
+	border-bottom-color: #CCC;
+	background-color: #FFFFCE;
+}
+
+
+li{
+	text-decoration: none;
+	display:inline;
+}
+
+.text_goodDetail_div{
+	width: 13%;
+	float: left;
+}
+
+.goodDetail{
+	width: 44%;
+}
+.good_checkbox_div{
+	width: 10%;
+	margin-left:10px;
+	float: left;
+}
+
+.good_picture_div{
+	float:left	
+}
+
+.good_picture{
+	width:60px;
+	float:left;	
+}
+
+.good_gname_rights {
+	height:100px;
+	float: left;
+}
+
+.good_gname_div{
+	margin-left:10px;
+	float:left;
+}
+
+.good_rights_div_div {
+	margin-top: 45px;
+	margin-left: 10px;
+}
+
+
+.good_size_div{
+	margin-left:60px;
+	width:40%;
+	height:90px;
+	float: left;
+	color:#999;
+}
+
+.price_div{
+	padding-left:10px;
+}
+
+.selectButton{	
+	font-size: 18px;
+
+	text-transform: none;
+	font-variant: normal;
+	font-weight: normal;
+	font:bold;
+	color:#FFF;
+	background-color:#F00;
+	text-align: center;
+	text-indent: 2mm;
+	padding: 9px;
+	width: auto;
+	height: auto;
+	margin-top: 50px;
+	float:right;
+
+}
+.count {
+	width: 30px;
+	text-align: center;
+}
+.adjust_count {
+	border: thin solid #999;
+	background-color: #CCC;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-size: 18px;
+	text-align: center;
+}

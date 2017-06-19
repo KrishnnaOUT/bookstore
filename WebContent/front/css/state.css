@@ -1,0 +1,57 @@
+#status{
+	width:100%;
+	height:30px;
+	background-color:#DFDFDF;
+}
+
+#status_text{
+	width:180px;
+	padding:5px;
+	margin-right:20px;
+	float:right;
+}
+
+#personDiv{
+	width: 200px;
+	height: 200px;
+	background-color:#E2E2E2;
+	position: absolute;
+	z-index: 10;
+	right: 0px;
+	display: none;
+	border-bottom-width: medium;
+	border-bottom-style: double;
+	border-bottom-color: #3F3F3F;
+}
+
+.touxiangDiv{
+	height:80px;
+	margin-left:20px;
+	margin-top:20px;
+	float:left;	
+}
+
+.usernameDiv{
+	height:60px;
+	margin-left:10px;
+	margin-top:20px;
+	padding-top:20px;
+	float:left;
+}
+
+.buttonDiv{
+	height:60px;
+	margin-left:20px;
+	margin-top:5px;
+	float:left;	
+}
+
+
+.touxiang{
+	width:80px;
+	border-radius: 80%;
+}
+
+.button{
+	
+}

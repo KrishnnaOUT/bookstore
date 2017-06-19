@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.krishnna.entity.User" table="user" >
+        <id name="uid" type="java.lang.String">
+            <column name="uid" />
+            <generator class="assigned" />
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="username" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" />
+        </property>
+        <property name="code" type="java.lang.String">
+            <column name="code" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="phone" />
+        </property>
+        <property name="active" type="boolean">
+            <column name="active" />
+        </property>
+        
+        <set name="orderSet" lazy="false">
+			<!-- 因为hibernate是双向维护的，
+			所以在一多两方都要配置这个外键，切名字一定要相同 -->
+			<!-- 设置外键 -->
+			<key column="uoid"></key>
+			<!-- 设置一对多 -->
+			<one-to-many class="com.krishnna.entity.myOrder"></one-to-many>
+		</set>
+        
+        <set name="addressSet" cascade="save-update" lazy="false">
+			<!-- 因为hibernate是双向维护的，
+			所以在一多两方都要配置这个外键，切名字一定要相同 -->
+			<!-- 设置外键 -->
+			<key column="uaid"></key>
+			<!-- 设置一对多 -->
+			<one-to-many class="com.krishnna.entity.Address"></one-to-many>
+		</set>
+		
+		<one-to-one name="store" class="com.krishnna.entity.Store" property-ref="user"></one-to-one>
+    </class>
+</hibernate-mapping>

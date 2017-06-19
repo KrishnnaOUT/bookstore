@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 2. 开启事物注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	
+	<!-- 创建GoodAction对象 负责商品的一切操作-->
+	<bean id="goodAction" class="com.krishnna.action.good.GoodAction"  scope="prototype" >
+		<!-- 注入GoodService对象 -->
+		<property name="goodService" ref="goodService"></property>
+	</bean>
+	
+	<!-- 创建GoodService对象 负责处理业务逻辑 -->
+	<bean id="goodService" class="com.krishnna.service.good.GoodService">
+		<!-- 注入HttpSolrServer对象 -->
+		<property name="server" ref="server"></property>
+		
+		<!-- 注入GoodDao对象 -->
+		<property name="goodDao" ref="goodDao"></property>
+	</bean>
+	
+	<!-- 创建GoodDao对象 -->
+	<bean id="goodDao" class="com.krishnna.dao.good.GoodDaoImpl">
+		<!-- 注入hibernatetemplate对象 -->
+		<property name="hibernateTemplate" ref="hibernateTemplate"></property>
+	</bean>
+	
+	<!-- 创建HttpSolrServer对象 -->
+	<bean id="server" class="org.apache.solr.client.solrj.impl.HttpSolrServer">
+		<constructor-arg value="http://localhost:8080/solr/"></constructor-arg>
+	</bean>
+	
+	<!-- 创建hibernateTemplate对象 -->
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<!-- 注入sessionFactory对象 -->
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+</beans>
